@@ -7,9 +7,11 @@ import "./styles/App.css";
 function App() {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text }]);
-  };
+let idCounter = 0;
+const addTodo = (text) => {
+  setTodos([...todos, { id: idCounter++, text }]);
+};
+
 
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
