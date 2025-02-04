@@ -8,15 +8,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
-  };
-
-  const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    setTodos([...todos, { id: Date.now(), text }]);
   };
 
   const deleteTodo = (id) => {
@@ -27,7 +19,7 @@ function App() {
     <div className="app">
       <Header />
       <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 }
