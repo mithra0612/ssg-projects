@@ -3,6 +3,7 @@ import "../styles/Todo.css";
 
 function TodoList({ todos, deleteTodo }) {
   return (
+    <>
     <ul className="todo-list">
       {todos.map((todo) => (
         <li key={todo.id} className="todo-item">
@@ -13,6 +14,7 @@ function TodoList({ todos, deleteTodo }) {
         </li>
       ))}
     </ul>
+    </>
   );
 }
 
